@@ -1,13 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clément Beauvois - CTO / CIO / CISO</title>
+  <title>CTO IA, Cloud & Sécurité – Expert Produit & Transformation Digitale | Clément Beauvois</title>
+  <meta name="description" content="CTO / VP Engineering avec 20+ ans d'expérience. Expert IA, Cloud GCP, sécurité, transformation digitale, produit SaaS. Basé à Lille, disponible remote France & Europe.">
+  <meta name="keywords" content="CTO IA, CTO Cloud, CTO France, VP Engineering, Tech Leader, Remote CTO, Transformation Digitale, Product Management, GCP Expert, DevOps, Sécurité Informatique, SaaS, Kubernetes, React, Python, Directeur Technique, LLM, AI, Data Platform">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Clément Beauvois",
+      "jobTitle": "CTO / VP Engineering",
+      "url": "https://clement-beauvois.github.io/cv/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lille",
+        "addressCountry": "FR"
+      },
+      "email": "mailto:clement.beauvois@gmail.com",
+      "sameAs": [
+        "https://linkedin.com/in/clément-beauvois-lille"
+      ]
+    }
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
   <style>
     body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; background: white; font-size: 16px; }
+    header, main, section, article, footer { display: block; }
     .overlay {
       background: url('img/background.png') no-repeat center center fixed;
       background-size: cover;
@@ -18,7 +40,7 @@
       flex-direction: column;
       align-items: center;
     }
-    .header { text-align: center; margin-bottom: 20px; }
+    header { text-align: center; margin-bottom: 20px; width: 100%; }
     .photo {
       width: 150px;
       height: 150px;
@@ -29,104 +51,174 @@
       margin-bottom: 20px;
     }
     h1 { font-family: 'Montserrat', sans-serif; font-size: 36px; color: #0056b3; margin-bottom: 10px; }
-    .contact-info { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; font-size: 14px; color: #333; margin-bottom: 20px; }
-    .summary, .section, .experience { background: rgba(255,255,255,0.9); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 20px; }
-    .summary { text-align: center; max-width: 800px; }
-    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1200px; margin-bottom: 40px; }
-    .experience-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 1200px; }
-    .experience { flex: 0 1 calc(30% - 20px); }
+    .contact-info { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; font-size: 14px; color: #333; margin-bottom: 20px; max-width: 100%; padding: 0 10px; }
+    .summary, .section, .experience {
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 800px;
+      box-sizing: border-box;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+      animation-delay: 0.2s;
+    }
+    .experience {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .experience:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .summary { text-align: center; margin-left: auto; margin-right: auto; }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin-bottom: 40px;
+      width: 100%;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    .experience-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    .experience {
+      flex: 1 1 300px;
+      min-width: 280px;
+      max-width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .experience ul {
+      flex-grow: 1;
+    }
+
+    .highlight {
+      background-color: #f1f9ff;
+      border-left: 4px solid #0077cc;
+      padding: 10px 15px;
+      margin-top: auto;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .highlight p {
+      margin: 5px 0;
+    }
     h2 { font-size: 22px; margin-bottom: 10px; color: #0077cc; }
     ul { padding-left: 20px; text-align: left; }
     li { margin-bottom: 5px; }
-    @media (max-width: 1024px) {
-      .grid-4 { grid-template-columns: 1fr 1fr; }
-      .experience { flex: 0 1 calc(48% - 20px); }
-    }
-    @media (max-width: 600px) {
-      .grid-4 { grid-template-columns: 1fr; }
-      .experience { flex: 0 1 100%; }
+    @media (max-width: 768px) {
       h1 { font-size: 28px; }
       .photo { width: 100px; height: 100px; }
-      .contact-info { flex-direction: column; align-items: center; }
       .summary, .section, .experience { padding: 15px; }
+      .contact-info { flex-direction: column; align-items: center; text-align: center; }
     }
-  </style>
+    @media (max-width: 480px) {
+      body { font-size: 14px; }
+      h2 { font-size: 18px; }
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
 </head>
 <body>
   <div class="overlay">
-    <div class="header">
+    <header>
       <div class="photo"></div>
-      <h1>Clément BEAUVOIS</h1>
+      <h1>Clément BEAUVOIS - CTO | COO | CISO</h1>
       <div class="contact-info">
         <span>🎂 41 ans</span>
         <span>❤️ Célibataire (👧🐶)</span>
         <span>📍 Marcq-en-Baroeul</span>
         <span>📧 clement.beauvois@gmail.com</span>
         <span>📞 +33 6 95 25 61 92</span>
-        <span>🔗 linkedin.com/in/clément-beauvois-lille</span>
+        <span>🔗 <a href="https://linkedin.com/in/clément-beauvois-lille">LinkedIn</a></span>
       </div>
-    </div>
+    </header>
 
-    <div class="summary">
-      <h2 style="text-align:center;">🎯 Objectifs</h2>
-      <p>Leader tech avec 20 ans d'expérience, je pilote l'innovation technologique au service de l'ambition d'entreprise.
-        A l'aise sur l'ensemble des périmètres, mon approche globale me permet d'agir avec pertinence sur la plupart des contextes fréquents en entreprise:
+    <main>
+      <section class="summary">
+        <h2>🎯 Objectifs</h2>
+        <p><strong>Leader tech avec 20 ans d'expérience</strong>, je pilote l'innovation technologique au service de l'ambition d'entreprise.
+          A l'aise transversalement, mon approche globale me permet d'agir avec pertinence sur la plupart des contextes de croissance :</p>
+          <ul>
+            <li><strong>Produit from scratch</strong> : roadmap, choix technologiques, recrutement équipe & définition process.</li>
+            <li><strong>Refonte de plateforme</strong> : audit, migrations, engagement d'équipes & refonte process.</li>
+            <li><strong>Transformation digitale</strong> : adoption outils modernes & efficacité.</li>
+            <li><strong>IA Enthusiasm</strong> : intégration d’IA métier pour productivité & performance.</li>
+          </ul>
+        <p>Particulièrement impliqué dans la stratégie globale, je transforme les défis technologiques en leviers stratégiques durables.</p>
+      </section>
 
-        <br><br><b>Produit from scratch</b>: écriture de la roadmap, choix technologiques, mise en place des équipes et des process.
-        <br><b>Refonte de plateforme</b>: audit, choix technologiques, migrations, mise en place des équipes et des process.
-        <br><b>Transformation digitale</b>: faire évoluer l'entreprise vers le digital, en intégrant des outils modernes et efficaces.
-        <br><b>IA Enthusiasm</b>: intégration de l'IA dans les produits métiers pour améliorer l'efficacité et la performance.
-
-        <br><br>Particuliérement intéressé par la stratégie globale de l'entreprise, mon ambition est de transformer les défis technologiques en opportunités stratégiques, priorisant l'accent sur l'innovation, la sécurité et la performance.
-
-      </p>
-  </div>
-
-    <div class="grid-4">
-      <div class="section">
-        <h2>🛠 Stack Technique</h2>
-            <ul>
-              <li>MongoDB / MySQL / PostgreSQL / SQLite</li>
-              <li>PHP / ExpressJS / NodeJS / Python / Go / Java / Bash</li>
-              <li>ReactJS / TypeScript</li>
-              <li>Google Cloud Platform / Unix / Linux</li>
-              <li>Kubernetes / Docker / Terraform / Capistrano</li>
-              <li>RabbitMQ / Redis / Elasticsearch</li>
-              <li>Salesforce / API Guru</li>
-              <li>IA: API, LLM locaux, agents autonomes</li>
-            </ul>
-      </div>
-      <div class="section">
-        <h2>📈 Compétences</h2>
-        <ul>
-          <li>PM / PO / Dev / DevOps / SysOps / Sécurité / Informatique interne</li>
-          <li>Transformation Digitale / Recrutement d'équipes / Structuration</li>
-          <li>Direction Technique / Produit</li>
-          <li>Projets / Agile Management</li>
-          <li>Sécurité / Audit</li>
-          <li>Performance / Scalabilité</li>
-          <li>ISO 9001 / 27001 / Qualiopi</li>
-        </ul>
-      </div>
-      <div class="section">
-        <h2>💬 Soft Skills</h2>
+      <section class="grid-4">
+        <article class="section">
+          <h2>🛠 Stack Technique</h2>
+          <ul>
+            <li>MongoDB / MySQL / PostgreSQL / SQLite</li>
+            <li>PHP / ExpressJS / NodeJS / Python / Go / Java / Bash</li>
+            <li>ReactJS / TypeScript</li>
+            <li>Cloud (GCP) / Unix / Linux</li>
+            <li>Kubernetes / Docker / Terraform / Capistrano</li>
+            <li>RabbitMQ / Redis / Elasticsearch</li>
+            <li>Apache / Nginx / SMTP / SMMP</li>
+            <li>Salesforce / API Guru</li>
+            <li>IA: API, LLM locaux, agents autonomes</li>
+          </ul>
+        </article>
+        <article class="section">
+          <h2>📈 Compétences</h2>
+          <ul>
+            <li>PM / PO / Dev / DevOps / SysOps / Sécurité / Informatique interne</li>
+            <li>Transformation Digitale / Recrutement d'équipes / Structuration</li>
+            <li>Direction Technique / Produit</li>
+            <li>Projets / Agile Management</li>
+            <li>Sécurité / Audit</li>
+            <li>Performance / Scalabilité</li>
+            <li>ISO 27001 - 9001 / Qualiopi</li>
+            <li>finOps / Appels d'offre / CIR-CII</li>
+          </ul>
+        </article>
+        <article class="section">
+          <h2>💬 Soft Skills</h2>
           <ul>
             <li>Leadership stratégique</li>
             <li>Management</li>
             <li>Transversalité</li>
-            <li>Forte implication dans la stratégie globale de l'entreprise</li>
+            <li>Implication dans la stratégie d’entreprise</li>
             <li>Résilience / Pragmatisme / Vision</li>
           </ul>
-      </div>
-      <div class="section">
-        <h2>🚀 Ambitions</h2>
-        <ul>
-          <li>Court terme : CTO / VP Engineering</li>
-          <li>Moyen terme : COO / CEO</li>
-          <li>Prétentions salariales : 100-120k€ brut annuel</li>
-        </ul>
-      </div>
-    </div>
+        </article>
+        <article class="section">
+          <h2>🚀 Ambitions</h2>
+          <ul>
+            <li>Court terme : CTO / VP Engineering</li>
+            <li>Moyen terme : COO / CEO</li>
+            <li>Rôle de direction stratégique, adapté à une fourchette salariale senior+</li>
+          </li>
+          </ul>
+        </article>
+      </section>
 
     <h2 style="text-align:center;">🏢 Expériences professionnelles</h2>
 
@@ -140,22 +232,35 @@
           <li>Recrutement, structuration d'équipes & management transverse (~20 personnes)</li>
           <li>Transformation digitale de l’entreprise</li>
           <li>Projet Campus digital from scratch #EdTech</li>
-          <li>Migration legacy vers cloud (GCP)</li>
-          <li>Gestion multi-produits (CRM custom, Salesforce, Applications legacy, Nouveau Campus)</li>
+          <li>Migration infra legacy vers cloud (GCP)</li>
+          <li>Environnement Multi-Produits</li>
           <li>Gestion achats et financements (CII, Appel d'offres)</li>
+          <li>IA Enthousiast</li>
         </ul>
+        <div class="highlight">
+          <p><strong>🧩 Problématique clé :</strong> <em>Legacy produit/infra instable en frein à l'innovation, équipe junior, absence de cadre agile.</em></p>
+          <p><strong>✅ Réussite majeure :</strong> <em>Transformation complète : recrutement qualifié, stack moderne & IA, infra Cloud CI/CD, méthodologie agile durable.</em></p>
+        </div>
+        
       </div>
       <div class="experience">
-        <h3>Directeur Plate-forme – Sarbacane Software – Hem</h3>
+        <h3>VP Technology & Security – Sarbacane Software (Positive Group) – Hem</h3>
         <p>Mai 2019 – Avril 2020</p>
         <ul>
+          <li>COMEX Board</li>
           <li>Direction technique Plate-forme, SI & Sécurité</li>
           <li>Management équipes Infra, DevOps, SI, Sécurité</li>
+          <li>Scalabilité et haute dispo de la plateforme</li>
           <li>Participation à la stratégie d'entreprise</li>
         </ul>
+        <div class="highlight">
+          <p><strong>🧩 Problématique clé :</strong> <em>Instabilité critique de la plateforme, disponibilité sous les 99 %.</em></p>
+          <p><strong>✅ Réussite majeure :</strong> <em>Stabilisation technique et process, SLA atteints avec 99.9 % de disponibilité garantie.</em></p>
+        </div>
+        
       </div>
       <div class="experience">
-        <h3>Team Leader – Product Manager – Sarbacane Software – Hem</h3>
+        <h3>Engineering Team Lead & Product Manager – Sarbacane Software – Hem</h3>
         <p>Mars 2017 – Mai 2019</p>
         <ul>
           <li>Management d'équipe dev (4 personnes)</li>
@@ -164,6 +269,11 @@
           <li>Gestion de projets spécifiques (avant-vente à livraison)</li>
           <li>API Guru</li>
         </ul>
+        <div class="highlight">
+          <p><strong>🧩 Problématique clé :</strong> <em>Lancement produit imminent avec backlog en retard critique.</em></p>
+          <p><strong>✅ Réussite majeure :</strong> <em>Réorganisation agile, sprints resserrés et suivi par KPI : livraison à temps assurée malgré la contrainte.</em></p>
+        </div>
+        
       </div>
       <div class="experience">
         <h3>Technical Product Manager – Sarbacane Software – Hem</h3>
@@ -174,6 +284,11 @@
           <li>Stratégies business techniques</li>
           <li>Supervision plateforme</li>
         </ul>
+        <div class="highlight">
+          <p><strong>🧩 Problématique clé :</strong> <em>Produit API inexistant et marginal (1,5 % du CA).</em></p>
+          <p><strong>✅ Réussite majeure :</strong> <em>Création et développement d’un produit API clé, sécurisé et scalable, représentant 35 % du CA durablement.</em></p>
+        </div>
+        
       </div>
       <div class="experience">
         <h3>Product Manager – Primotexto – Hem</h3>
@@ -184,17 +299,25 @@
           <li>Développement du produit API (Docs, SDK))</li>
           <li>Outils internes de gestion / support / monitoring</li>
         </ul>
+        <div class="highlight">
+          <p><strong>🧩 Problématique clé :</strong> <em>Produit early stage sans part de marché établie.</em></p>
+          <p><strong>✅ Réussite majeure :</strong> <em>Émergence parmi les leaders français innovants, avec une croissance continue.</em></p>
+        </div>
       </div>
       <div class="experience">
-        <h3>Ambassadeur Poker – PMU.fr – Paris</h3>
+        <h3>Brand Ambassador – PMU.fr (Professional Poker Player) – Paris</h3>
         <p>Septembre 2010 – Septembre 2013</p>
         <ul>
-          <li>Joueur professionnel de poker</li>
+          <li>Joueur professionnel online</li>
           <li>Représentant PMU.fr sur circuit international</li>
         </ul>
+        <div class="highlight">
+          <p><strong>🧩 Problématique clé :</strong> <em>Faire du poker un métier visible, crédible et durable dans un contexte grand public.</em></p>
+          <p><strong>✅ Réussite majeure :</strong> <em>Approche scientifique, discipline pro, image forte construite en lien avec PMU.fr.</em></p>
+        </div>
       </div>
       <div class="experience">
-        <h3>Responsable délivrabilité & plate-forme – Sarbacane Software – Hem</h3>
+        <h3>Deliverability & Platform Manager – Sarbacane Software – Hem</h3>
         <p>Avril 2008 – Avril 2010</p>
         <ul>
           <li>Adminisration de serveurs Unix/Linux (~30)</li>
@@ -203,15 +326,24 @@
           <li>Industrialisation des déploiements</li>
           <li>Monitoring</li>
         </ul>
+        <div class="highlight">
+          <p><strong>🧩 Problématique clé :</strong> <em>Délivrabilité mondiale insuffisante et plateforme peu scalable.</em></p>
+          <p><strong>✅ Réussite majeure :</strong> <em>Optimisation complète des normes e-mail et scalabilité automatisée de l’infrastructure d’envoi.</em></p>
+        </div>
       </div>
       <div class="experience">
-        <h3>Ingénieur système / avant-vente, intégration & support – Vaderetro Technology – Hem</h3>
+        <h3>Systems Engineer / Pre-sales, Integration & Support  – Vaderetro Technology – Hem</h3>
         <p>Mars 2003 – Avril 2007</p>
         <ul>
           <li>Intégration de technologies propriétaires (applications / appliances / cloud)</li>
           <li>Avant-vente des solutions</li>
           <li>Déploiement et support</li>
         </ul>
+        <div class="highlight">
+          <p><strong>🧩 Problématique clé :</strong> <em>DLL antispam innovante mais trop fermée pour répondre aux besoins terrain.</em></p>
+          <p><strong>✅ Réussite majeure :</strong> <em>Industrialisation multi-environnements : MTA, appliance, cloud – pour une couverture 360° du marché.</em></p>
+        </div>
+        
       </div>
     </div>
 
